@@ -1,14 +1,14 @@
 #!/bin/sh
 
 if [ "$#" -lt "3" ]; then
-  echo "Parameter must not be null!"
-  echo "Usage: ./openwrt.sh interface username password"
+  echo "Usage: ./ruijie.sh interface username password"
   echo "interface can be \"chinamobile\", \"chinanet\" and \"chinaunicom\". If this parameter do not set as these value, it will use campus network as default interface."
+  echo "Example: ./ruijie.sh chinanet 201620000000 123456"
   exit 1
 fi
 
 loginURL=`curl -s "http://139.199.182.194/jmuRuijie.html" | awk -F \' '{print $2}'`
-#Get Ruijie auth URL, if user already online loginURL will be null
+#Get Ruijie auth URL, if user already online loginURL will be null. The jmuRuijie.html is a blank page.
 
 chinamobile="%40%D2%C6%B6%AF%BF%ED%B4%F8%BD%D3%C8%EB"
 chinanet="%40%B5%E7%D0%C5%BF%ED%B4%F8%BD%D3%C8%EB"
@@ -32,7 +32,7 @@ if [ "$1" = "chinaunicom" ]; then
 fi
 
 if [ -z "$interface" ]; then
-  echo "Use Campus Network as auto interface."
+  echo "Use Campus Network as auth interface."
 fi
 
 if [ -z "$loginURL" ]; then
