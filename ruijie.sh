@@ -34,7 +34,6 @@ fi
 
 if [ -z "$interface" ]; then
   echo "Use Campus Network as auth interface."
-  interface="$campus"
 fi
 
 #Exit when already online
@@ -49,8 +48,8 @@ loginURL="${loginURL/index.jsp/InterFace.do?method=login}"
 
 #Structure quertString
 queryString=`echo $loginPageURL | awk -F \? '{print $2}'`
-queryString="${queryString//&/\%2526}"
-queryString="${queryString//=/\%253D}"
+queryString="${queryString//&/%2526}"
+queryString="${queryString//=/%253D}"
 
 #Login and output the result
 if [ -n "$loginURL" ]; then
