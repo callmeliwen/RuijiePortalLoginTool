@@ -4,9 +4,18 @@
 
 如果你想将本脚本用于你的学校，需要对脚本中的部分内容进行适当的修改。
 
-这个脚本的主要是用 curl 发送认证所需的 POST 数据包实现 Web 认证。
+这个脚本是通过 curl 发送认证所需的 POST 数据包来实现 Web 认证的。
 
-我主要将这个代码用于 Openwrt 路由器上，实现每天早上自动认证锐捷（因为我所在的学校每天晚上断网了之后隔天早上得重新认证）。
+# 用法
+
+```shell
+chmod +x ruijie.sh
+./ruijie.sh interface username password
+```
+
+- interface参数为锐捷认证的宽带接入参数，可以为chinanet（电信宽带接入）、chinamobile（移动宽带接入）、chinaunicom（联通宽带接入）或者为campus（教育网接入）。这个参数仅仅适用于我所在的大学，如果你想将本脚本用于你的大学需要做相应的修改。
+- username参数为认证用户名。
+- password参数为认证密码。
 
 # 局限性
 
