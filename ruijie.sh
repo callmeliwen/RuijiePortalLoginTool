@@ -34,6 +34,7 @@ fi
 
 if [ -z "$interface" ]; then
   echo "Use Campus Network as auth interface."
+  interface="$campus"
 fi
 
 #Exit when already online
