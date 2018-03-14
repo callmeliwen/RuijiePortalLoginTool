@@ -2,6 +2,10 @@
 
 本脚本实现了锐捷 ePortal Web 认证的登录，需要 curl 指令的支持，通过 curl 发送认证所需的 POST 数据包来实现 Web 认证。
 
+项目中的脚本文件以 **_jmu** 结尾命名的仅适用于我的学校，其他学校请使用 **_general** 结尾命名的脚本文件。
+
+更多详情以及用法等请参考：[https://lgiki.pw/2018/01/13/fxxk-ruijie-eportal/](https://lgiki.pw/2018/01/13/fxxk-ruijie-eportal/)
+
 # 用法
 
 ```shell
