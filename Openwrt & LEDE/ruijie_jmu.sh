@@ -1,9 +1,16 @@
 #!/bin/sh
 
+if [ "$1" = "logout" ]; then
+  logoutResult=`curl -s -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36" http://210.34.130.210/eportal/InterFace.do?method=logout`
+  echo $logoutResult
+  exit 0
+fi
+
 if [ "$#" -lt "3" ]; then
   echo "Usage: ./ruijie_jmu.sh interface username password"
   echo "interface can be \"chinamobile\", \"chinanet\" and \"chinaunicom\". If this parameter do not set as these value, it will use campus network as default interface."
   echo "Example: ./ruijie_jmu.sh chinanet 201620000000 123456"
+  echo "if you want to logout, use: ./ruijie_jmu.sh logout"
   exit 1
 fi
 
